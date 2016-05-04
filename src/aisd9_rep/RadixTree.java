@@ -118,7 +118,9 @@ public class RadixTree
 			return true;
 		}
 		else
+		{
 			return false;
+		}
 	}
 	
 	
@@ -132,8 +134,8 @@ public class RadixTree
 	{
 		int matches = MatchingConsecutiveCharacters(wordPart, curNode);
 		
-		if((matches == 0) || (curNode == root) || ((matches > 0) && matches < wordPart.length()) 
-				&& (matches >= curNode.label.length()))
+		if((matches == 0) || (curNode == root) || ((matches > 0) && (matches < wordPart.length()) 
+				&& (matches >= curNode.label.length())))
 		{
 			String newLabel = wordPart.substring(matches, wordPart.length() - matches);
 			for(RadixNode child: curNode.subNodes)
